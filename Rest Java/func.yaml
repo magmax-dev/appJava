@@ -1,8 +1,23 @@
-schema_version: 20180708
-name: listinstances
-version: 0.0.9
-runtime: java
-build_image: fnproject/fn-java-fdk-build:jdk11-1.0.98
-run_image: fnproject/fn-java-fdk:jre11-1.0.98
-cmd: io.fnproject.example.ComputeInstancesListFunction::handle
-timeout: 120
+coverage:
+  # Commit status https://docs.codecov.io/docs/commit-status are used
+  # to block PR based on coverage threshold.
+  status:
+    project:
+      default:
+        target: auto
+        threshold: 4%
+    patch:
+      # Disable the coverage threshold of the patch, so that PRs are
+      # only failing because of overall project coverage threshold.
+      # See https://docs.codecov.io/docs/commit-status#disabling-a-status.
+      default: false
+comment:
+  # Update existing comment or create new if deleted.
+  behavior: default
+ignore:
+  - "testdata"
+  - "**/zz_*generated*.go"
+  - "templates"
+  - "hack"
+  - "test"
+  - "third_party"

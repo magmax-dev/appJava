@@ -1,9 +1,2 @@
-version: 1.0
-provider:
-  name: openfaas
-  gateway: http://127.0.0.1:8080
-functions:
-  my-java-function:
-    lang: java11
-    handler: ./my-function
-    image: my-dockerhub-user/my-java-function:latest
+memory: 1024
+timeout: 120
